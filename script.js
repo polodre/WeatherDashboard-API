@@ -162,4 +162,13 @@ async function displayFiveDayForecast() {
         cardDeck.append(forecastCard);
       }
       $("#forecastContainer").html(forecastDiv);
-    }
+}
+function historyDisplayWeather(){
+    cityname = $(this).attr("data-name");
+    displayWeather();
+    displayFiveDayForecast();
+    console.log(cityname);
+
+}
+
+$(document).on("click", ".city", historyDisplayWeather);
