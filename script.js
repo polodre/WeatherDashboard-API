@@ -16,3 +16,12 @@ function renderCities(){
         $("#cityList").prepend(a);
     } 
 }
+function initCityList() {
+    var storedCities = JSON.parse(localStorage.getItem("cities"));
+
+    if (storedCities !== null) {
+        cityList = storedCities;
+    }
+
+    renderCities();
+    }
