@@ -24,4 +24,23 @@ function initCityList() {
     }
 
     renderCities();
+}
+function initWeather() {
+    var storedWeather = JSON.parse(localStorage.getItem("currentCity"));
+
+    if (storedWeather !== null) {
+        cityname = storedWeather;
+
+        displayWeather();
+        displayFiveDayForecast();
     }
+}
+function storeCityArray() {
+    localStorage.setItem("cities", JSON.stringify(cityList));
+    }
+
+// This function saves the currently display city to local storage
+function storeCurrentCity() {
+
+    localStorage.setItem("currentCity", JSON.stringify(cityname));
+}
